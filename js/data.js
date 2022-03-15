@@ -112,3 +112,21 @@ const arrIcons = [
 		color: 'blue'
 	}
 ];
+
+const iconsContainer = document.querySelector('.icons-container');
+
+function instertIcons(arrIcons, iconsContainer){
+	arrIcons.forEach(element => {
+		const div = document.createElement('div');
+		div.classList.add('box');
+		div.innerHTML = `
+            <i class="${element.family} ${element.prefix}${element.name}" style="color: ${element.color}"></i>
+			<span>${element.name}</span>
+			`;
+			iconsContainer.append(div)
+		});
+
+	}
+
+	instertIcons(arrIcons, iconsContainer)
+            
