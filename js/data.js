@@ -129,4 +129,38 @@ function instertIcons(arrIcons, iconsContainer){
 	}
 
 	instertIcons(arrIcons, iconsContainer)
-            
+
+	const iconsTypeSelector = document.getElementById('icons-type-selector');
+    iconsTypeSelector.addEventListener('change', function(){
+
+		const selectedType = this.value;
+		
+		console.log(selectedType);
+
+		
+			const filteredIcons = arrIcons.filter((iconArg) => {
+				if(iconArg.type == selectedType){
+					return true;
+					
+				}
+			});
+			
+			
+			console.log(filteredIcons)
+		
+		
+	})
+	
+	// if(iconsTypeSelector != 'all'){
+	// 	const filteredIcons = arrIcons.filter((iconsArgument) => {
+	// 		if(iconsArgument.type == selectedType){
+	// 			return true;
+				
+	// 		}
+	// 	})
+	// 	// console.log(iconsArgument.type)
+	// 	insertIcons(filteredIcons, iconsContainer);
+	// 	console.log(filteredIcons)
+	// }else{
+	// 	insertIcons(arrIcons, iconsContainer);
+	// }
